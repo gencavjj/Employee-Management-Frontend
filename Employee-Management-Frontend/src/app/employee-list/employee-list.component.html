@@ -1,1 +1,9 @@
-<p>employee-list works!</p>
+<h1>Employees</h1>
+
+<div *ngFor="let employee of employees | async" style="width: 300px;">
+  <employee-details [employee]='employeer'></employee-details>
+</div>
+
+<div>
+  <button type="button" class="button btn-danger" (click)='deleteEmployees()'>Delete All</button>
+</div>
