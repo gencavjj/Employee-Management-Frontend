@@ -19,8 +19,8 @@ export class EmployeeDetailsComponent implements OnInit {
   }
  
   updateActive(isActive: boolean) {
-    this.employeeService.updateEmployee(this.employee.id,
-      { name: this.employee.name, age: this.employee.age, active: isActive })
+    this.employeeService.updateEmployee(this.employee.employee_id,
+      { firstname: this.employee.first_name, lastname: this.employee.last_name, active: isActive })
       .subscribe(
         data => {
           console.log(data);
@@ -30,7 +30,7 @@ export class EmployeeDetailsComponent implements OnInit {
   }
  
   deleteCustomer() {
-    this.employeeService.deleteEmployee(this.employee.id)
+    this.employeeService.deleteEmployee(this.employee.employee_id)
       .subscribe(
         data => {
           console.log(data);
