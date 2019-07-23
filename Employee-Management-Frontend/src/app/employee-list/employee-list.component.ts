@@ -5,9 +5,9 @@ import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
 
 @Component({
-  selector: 'employees-list',
-  templateUrl: './employees-list.component.html',
-  styleUrls: ['./employees-list.component.css']
+  selector: 'employee-list',
+  templateUrl: './employee-list.component.html',
+  styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
 
