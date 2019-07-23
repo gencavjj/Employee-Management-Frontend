@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Employee-Management-Frontend';
+  description = 'This Employee Management system reflects the journey of a man and his surfboard.';
 }

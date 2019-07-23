@@ -8,12 +8,6 @@
     <div>
       <label>Email Address: </label> {{employee.email_address}}
     </div>
-  
-    <span class="button is-small btn-primary" *ngIf='employee.active' (click)='updateActive(false)'>Inactive</span>
-  
-    <span class="button is-small btn-primary" *ngIf='!employee.active' (click)='updateActive(true)'>Active</span>
-  
-    <span class="button is-small btn-danger" (click)='deleteEmployee()'>Delete</span>
-  
+
     <hr/>
   </div>

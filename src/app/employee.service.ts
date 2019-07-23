@@ -19,12 +19,12 @@ export class EmployeeService {
     return this.http.post(`${this.baseUrl}` + `/create`, employee);
   }
 
-  updateEmployee(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+  updateEmployee(employee_id: number, value: any): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${employee_id}`, value);
   }
 
-  deleteEmployee(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  deleteEmployee(employee_id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${employee_id}`, { responseType: 'text' });
   }
 
   getEmployeesList(): Observable<any> {
