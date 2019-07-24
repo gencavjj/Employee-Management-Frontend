@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Employee } from '../employee-model/employee';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) { }
 
-  public getEmployee(employee_id: number): Observable<Object> {
+  public getEmployee(employee_id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${employee_id}`);
   }
 

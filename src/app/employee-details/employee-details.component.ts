@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EmployeeService } from '../employee-service/employee.service';
 import { Employee } from '../employee-model/employee';
- 
-import { EmployeeListComponent } from '../employee-list/employee-list.component';
- 
+import { ActivatedRoute, Router } from '@angular/router';
+  
 @Component({
   selector: 'employee-details',
   templateUrl: './employee-details.component.html',
@@ -11,21 +10,24 @@ import { EmployeeListComponent } from '../employee-list/employee-list.component'
 })
 export class EmployeeDetailsComponent implements OnInit {
  
-  @Input() employee: Employee;
+  employee_id: number;
+  employee: Employee;
  
-  constructor(private employeeService: EmployeeService, private listComponent: EmployeeListComponent) { }
+  constructor(private route: ActivatedRoute,private router: Router,
+    private employeeService: EmployeeService) { }
  
   ngOnInit() {
+    this.employee = new Employee();
+
+    this.employee_id = this.route.snapshot.params['employee_id'];
+
+    this.employeeService.getEmployee(this.employee_id).subscribe(data => {
+      console.log(data)
+      this.employee = data;
+    }, error => console.log(error));
   }
  
-  updateActive(isActive: boolean) {
-    this.employeeService.updateEmployee(this.employee.employee_id,
-      { firstname: this.employee.first_name, lastname: this.employee.last_name, active: isActive })
-      .subscribe(
-        data => {
-          console.log(data);
-          this.employee = data as Employee;
-        },
-        error => console.log(error));
+  list(){
+    this.router.navigate(['employees']);
   }
 }
