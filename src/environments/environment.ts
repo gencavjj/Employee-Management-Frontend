@@ -3,9 +3,6 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  apiBaseUrl: 'http://localhost:8080/api',
-  defaultNumberOfTableRows: 5,
-  securityEnabled: true,
   production: false
 };
 

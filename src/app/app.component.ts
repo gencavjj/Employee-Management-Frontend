@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Employee-Management-Frontend';
-  description = 'This Employee Management system reflects the journey of a man and his surfboard.';
+
+  title: string;
+  description: string;
+
+  constructor() {
+    this.title = 'Employee-Management-Frontend';
+    this.description = 'This Employee Management system reflects the journey of a man, his surfboard, and his team.'
+  }
 }

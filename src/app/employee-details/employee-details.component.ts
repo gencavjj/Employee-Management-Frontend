@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { EmployeeService } from '../employee.service';
-import { Employee } from '../employee';
+import { EmployeeService } from '../employee-service/employee.service';
+import { Employee } from '../employee-model/employee';
  
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
  
@@ -25,16 +25,6 @@ export class EmployeeDetailsComponent implements OnInit {
         data => {
           console.log(data);
           this.employee = data as Employee;
-        },
-        error => console.log(error));
-  }
- 
-  deleteCustomer() {
-    this.employeeService.deleteEmployee(this.employee.employee_id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.listComponent.reloadData();
         },
         error => console.log(error));
   }

@@ -1,35 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { EmployeeService } from '../employee.service';
-import { Employee } from '../employee';
+import { EmployeeService } from '../employee-service/employee.service';
+import { Employee } from '../employee-model/employee';
 
 @Component({
-  selector: 'employee-list',
+  selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
 
-  employees: Observable<Employee[]>;
+  employees: Observable<any[]>;
 
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
-    this.reloadData();
-  }
-
-  deleteCustomers() {
-    this.employeeService.deleteAll()
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log('ERROR: ' + error));
-  }
-
-  reloadData() {
-    this.employees = this.employeeService.getEmployeesList();
+    this.employeeService.getEmployeesList().subscribe(data => {
+      this.employees = data;
+    },
+    error => console.log(error)
+    )
   }
 }
