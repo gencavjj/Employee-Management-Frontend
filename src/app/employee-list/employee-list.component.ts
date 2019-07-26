@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { EmployeeDetailsComponent } from '../employee-details/employee-details.component';
 import { EmployeeService } from '../employee-service/employee.service';
 import { Employee } from '../employee-model/employee';
 import { Router } from '@angular/router';
@@ -24,8 +24,18 @@ export class EmployeeListComponent implements OnInit {
     reloadData() {
       this.employees = this.employeeService.getEmployeesList();
     }
+
+    deleteEmployee(employeeId: number) {
+      this.employeeService.deleteEmployee(employeeId)
+        .subscribe(
+          data => {
+            console.log(data);
+            this.reloadData();
+          },
+          error => console.log(error));
+    }
   
-    employeeDetails(id: number){
-      this.router.navigate(['details', id]);
+    employeeDetails(employeeId: number){
+      this.router.navigate(['details', employeeId]);
     }
   }
