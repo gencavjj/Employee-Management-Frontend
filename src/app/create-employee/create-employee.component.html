@@ -5,17 +5,18 @@
             <label for="name">First Name</label>
             <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
         </div>
-
         <div class="form-group">
             <label for="name">Last Name</label>
             <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
         </div>
-
         <div class="form-group">
             <label for="name">Email ID</label>
             <input type="text" class="form-control" id="emailAddress" required [(ngModel)]="employee.emailAddress" name="emailAddress">
         </div>
-
+        <div class="form-group">
+            <label for="name">Notes</label>
+            <input type="text" class="form-control" id="text" required [(ngModel)]="employee.text" name="text">
+        </div>
         <button type="submit" class="btn btn-success">Submit</button>
         
     </form>
