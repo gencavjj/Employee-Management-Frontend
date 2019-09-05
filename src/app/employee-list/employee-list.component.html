@@ -7,21 +7,17 @@
       <table class="table table-striped table-bordered">
           <thead>
               <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Email</th>
+                  <th>fullName</th>
                   <th>Note</th>
                   <th>Actions</th>
               </tr>
           </thead>
           <tbody>
               <tr *ngFor="let employee of employees | async">
-                  <td>{{employee.firstName}}</td>
-                  <td>{{employee.lastName}}</td>
-                  <td>{{employee.emailAddress}}</td>
+                  <td>{{employee.fullName}}</td>
                   <td>{{employee.notes}}</td>
-                  <td><button (click)="deleteEmployee(employee.employeeId)">Delete</button>
-                      <button (click)="employeeDetails(employee.employeeId)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                  <td><button (click)="deleteEmployee(employee.employeeID)">Delete</button>
+                      <button (click)="employeeDetails(employee.employeeID)" class="btn btn-info" style="margin-left: 10px">Details</button>
                 </td>
               </tr>
           </tbody>

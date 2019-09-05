@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EmployeeDetailsComponent implements OnInit {
  
-  employeeId: number;
+  employeeID: number;
   employee: Employee;
  
   constructor(private route: ActivatedRoute,private router: Router,
@@ -19,9 +19,9 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit() {
     this.employee = new Employee();
 
-    this.employeeId = this.route.snapshot.params['employeeId'];
+    this.employeeID = this.route.snapshot.params['employeeID'];
 
-    this.employeeService.getEmployee(this.employeeId)
+    this.employeeService.getEmployee(this.employeeID)
     .subscribe(data => {
       console.log(data)
       this.employee = data;

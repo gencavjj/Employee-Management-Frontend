@@ -1,7 +1,5 @@
 export class Employee {
-    employeeId: number;
-    firstName: string;
-    lastName: string;
-    emailAddress: string;
-    notes: string;
+    employeeID: number;
+    fullName: string;
+    notes: string[];
 }
