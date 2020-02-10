@@ -118,6 +118,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Employee-Management-Frontend"
+    }
+  },
+  "defaultProject": "Employee-Management-Frontend",
+  "cli": {
+    "analytics": false
+  }
 }
